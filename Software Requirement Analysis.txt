@@ -1,0 +1,29 @@
+Requirements:
+    
+    1. Speaker Identification
+    2. Intent Detector
+    3. Functionalities:
+        0. Startup message with time and weather.
+        a. Google/Internet Search
+        b. Youtube search
+        c. Send email via gmail
+        d. Send message via whatsapp (if logged in)
+        e. Change wallpaper
+        f. Control volume
+        g. Play songs
+        h. Send text message to phone.
+        i. Make phone calls
+        j. Start recording session
+        k. Intelligent conversations
+        l. Launching applications
+        m. Showing locations/routes
+        n. Showing time
+        o. Showing weather
+        p. music controls
+        q. Jokes
+        r. Sarcasm
+        s. Math Calculations
+        t. read out loud
+        u. news
+        v. Brightness control
+    4. Implement Gideon type UI
