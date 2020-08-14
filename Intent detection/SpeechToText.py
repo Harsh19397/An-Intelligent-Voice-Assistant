@@ -1,7 +1,21 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug 14 00:38:16 2020
+import speech_recognition as sr
 
-@author: Harsh Parashar
-"""
+
+def speechToText():
+    r = sr.Recognizer()
+    
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source)
+        
+        print("Please say something...")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+        
+        try:
+            print("Recognizing...")
+            return r.recognize_google(audio)
+            
+        except Exception as e:
+            print("Error: "+str(e))
+        return "Error"
 

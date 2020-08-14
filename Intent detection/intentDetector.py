@@ -1,162 +1,76 @@
-import pandas as pd
 import numpy as np
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem.lancaster import LancasterStemmer
 import nltk
 import re
-from sklearn.preprocessing import OneHotEncoder
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils import to_categorical
-from keras.models import Sequential, load_model
-from keras.layers import Dense, LSTM, Bidirectional, Embedding, Dropout
-import speech_recognition as sr
 from keras.models import load_model
-from keras.callbacks import ModelCheckpoint
-from sklearn.model_selection import train_test_split
+import data_preprocessing_utilities as dpu
+import TextToSpeech as tts
+import SpeechToText as stt
+import logging
+import train_NN
+import os
 
 
-def load_dataset(filename):
-  df = pd.read_csv(filename, encoding = "latin1", names = ["Sentence", "Intent"])
-  print(df.head())
-  intent = df["Intent"]
-  unique_intent = list(set(intent))
-  sentences = list(df["Sentence"])
-  
-  return (intent, unique_intent, sentences)
+logging.basicConfig(level=logging.DEBUG)
 
-intent, unique_intent, sentences = load_dataset("Dataset.csv")
-print(sentences[:5])
+#Loading the dataset
+intent, unique_intent, sentences = dpu.load_dataset('Dataset.csv')
+logging.debug(sentences[:5])
 
+#Downloading the stopwords and punctuation marks
 nltk.download("stopwords")
 nltk.download("punkt")
 
-#define stemmer
-stemmer = LancasterStemmer()
+#Cleaning the words
+cleaned_words = dpu.cleaning(sentences)
+logging.debug("The length of the cleaned words is: "+str(len(cleaned_words)))
+logging.debug(cleaned_words[:2])
 
-def cleaning(sentences):
-  words = []
-  for s in sentences:
-    clean = re.sub(r'[^ a-z A-Z 0-9]', " ", s)
-    w = word_tokenize(clean)
-    #stemming
-    words.append([i.lower() for i in w])
-    
-  return words
-
-cleaned_words = cleaning(sentences)
-print(len(cleaned_words))
-print(cleaned_words[:2])
-
-def create_tokenizer(words, filters = '!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'):
-  token = Tokenizer(filters = filters)
-  token.fit_on_texts(words)
-  return token
-
-
-def max_length(words):
-  return(len(max(words, key = len)))
-  
-word_tokenizer = create_tokenizer(cleaned_words)
+#Creating the Tokens
+#calculating vocab_size and maximum length of the cleaned words  
+word_tokenizer = dpu.create_tokenizer(cleaned_words)
 vocab_size = len(word_tokenizer.word_index) + 1
-max_length = max_length(cleaned_words)
+max_length = dpu.max_length(cleaned_words)
 
-print("Vocab Size = %d and Maximum length = %d" % (vocab_size, max_length))
-def encoding_doc(token, words):
-  return(token.texts_to_sequences(words))
-  
-encoded_doc = encoding_doc(word_tokenizer, cleaned_words)
+logging.debug("Vocab Size = %d and Maximum length = %d" % (vocab_size, max_length))
 
-def padding_doc(encoded_doc, max_length):
-  return(pad_sequences(encoded_doc, maxlen = max_length, padding = "post"))
+#Encoding text to sequences  
+encoded_doc = dpu.encoding_doc(word_tokenizer, cleaned_words)
 
-padded_doc = padding_doc(encoded_doc, max_length)
+#Padding the sequences encoded above
+padded_doc = dpu.padding_doc(encoded_doc, max_length)
+logging.debug(padded_doc[:5])
+logging.debug("Shape of padded docs = ",padded_doc.shape)
 
-padded_doc[:5]
-
-print("Shape of padded docs = ",padded_doc.shape)
-
-#tokenizer with filter changed
-output_tokenizer = create_tokenizer(unique_intent, filters = '!"#$%&()*+,-/:;<=>?@[\]^`{|}~')
-                                    
+#Tokenizer with filter changed
+output_tokenizer = dpu.create_tokenizer(unique_intent, filters = '!"#$%&()*+,-/:;<=>?@[\]^`{|}~')                                    
 output_tokenizer.word_index
-
-encoded_output = encoding_doc(output_tokenizer, intent)
-
-
+encoded_output = dpu.encoding_doc(output_tokenizer, intent)
 encoded_output = np.array(encoded_output).reshape(len(encoded_output), 1)
 
-encoded_output.shape
+logging.debug(encoded_output.shape)
 
-def one_hot(encode):
-  o = OneHotEncoder(sparse = False)
-  return(o.fit_transform(encode))
-  
-output_one_hot = one_hot(encoded_output)
+#One Hot Encoding  
+output_one_hot = dpu.one_hot(encoded_output)
+logging.debug(output_one_hot.shape)
 
+#Splitting the dataset into training and test dataset
+train_X, val_X, train_Y, val_Y = dpu.train_test_split(padded_doc, output_one_hot, shuffle = True, test_size = 0.2)
 
-output_one_hot.shape
+logging.debug("Shape of train_X = %s and train_Y = %s" % (train_X.shape, train_Y.shape))
+logging.debug("Shape of val_X = %s and val_Y = %s" % (val_X.shape, val_Y.shape))
 
-train_X, val_X, train_Y, val_Y = train_test_split(padded_doc, output_one_hot, shuffle = True, test_size = 0.2)
+#Running the RNN
+filename = 'IntentDetectormodel.h5'
 
+if os.path.isfile('IntentDetectormodel.h5') == False:
+    train_NN.create_model(vocab_size, max_length, train_X, train_Y, val_X, val_Y, filename)
 
-print("Shape of train_X = %s and train_Y = %s" % (train_X.shape, train_Y.shape))
-print("Shape of val_X = %s and val_Y = %s" % (val_X.shape, val_Y.shape))
-
-def create_model(vocab_size, max_length):
-  model = Sequential()
-  model.add(Embedding(vocab_size, 128, input_length = max_length, trainable = False))
-  model.add(Bidirectional(LSTM(128)))
-#   model.add(LSTM(128))
-  model.add(Dense(64, activation = "relu"))
-  model.add(Dropout(0.5))
-  model.add(Dense(21, activation = "softmax"))
-  
-  return model
-
-model = create_model(vocab_size, max_length)
-
-model.compile(loss = "categorical_crossentropy", optimizer = "adam", metrics = ["accuracy"])
-model.summary()
-
-
-filename = 'model.h5'
-checkpoint = ModelCheckpoint(filename, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
-
-hist = model.fit(train_X, train_Y, epochs = 100, batch_size = 32, validation_data = (val_X, val_Y), callbacks = [checkpoint])
-
-model = load_model('model.h5')
-
-def speechToText():
-    r = sr.Recognizer()
-    
-    with sr.Microphone() as source:
-        r.adjust_for_ambient_noise(source)
-        
-        print("Please say something...")
-        r.pause_threshold = 1
-        audio = r.listen(source)
-        
-        try:
-            print("Recognizing...")
-            return r.recognize_google(audio)
-            
-        except Exception as e:
-            print("Error: "+str(e))
-        return "Error"
-     
-engine = pyttsx3.init('sapi5') 
-voices = engine.getProperty('voices') 
-engine.setProperty('voice', voices[0].id) 
-
-def speak(audio): 
-    engine.say(audio) 
-    engine.runAndWait() 
+#Loading the model    
+model = load_model('IntentDetectormodel.h5')
 
 def predictions(text):
   clean = re.sub(r'[^ a-z A-Z 0-9]', " ", text)
-  test_word = word_tokenize(clean)
+  test_word = dpu.word_tokenize(clean)
   test_word = [w.lower() for w in test_word]
   test_ls = word_tokenizer.texts_to_sequences(test_word)
   print(test_word)
@@ -166,8 +80,8 @@ def predictions(text):
     
   test_ls = np.array(test_ls).reshape(1, len(test_ls))
  
-  x = padding_doc(test_ls, max_length)
-  
+  x = dpu.padding_doc(test_ls, max_length)
+  model = load_model('IntentDetectormodel.h5')
   pred = model.predict_proba(x)
   
   
@@ -183,85 +97,33 @@ def get_final_output(pred, classes):
   predictions = -np.sort(-predictions)
   return classes[np.argmax(predictions)]
 
-#Testing
-text = "Can you help me?"
-pred = predictions(text)
-get_final_output(pred, unique_intent)
-
-
 #Speech Recognition
-
 def detect_intent():
     while True:
-        query = speechToText()
+        query = stt.speechToText()
         pred = predictions(query)
         intent_harsh = get_final_output(pred, unique_intent)
     
         if intent_harsh == unique_intent[0]:
-            speak("You can tell me everything.")
+            tts.speak("You can tell me everything.")
         
         elif intent_harsh == unique_intent[1]:
-            speak("I will help you to register this program.")
+            tts.speak("I will help you to register this program.")
         
         elif intent_harsh == unique_intent[2]:
-            speak("I am a bot.")
+            tts.speak("I am a bot.")
         
         elif intent_harsh == unique_intent[3]:
-            speak("Querry")
+            tts.speak("Querry")
         
         elif intent_harsh == unique_intent[4]:
-            speak(unique_intent[4][3:])
+            tts.speak(unique_intent[4][3:])
         
         elif intent_harsh == unique_intent[5]:
-            speak("Borrow limit")
-        
-        elif intent_harsh == unique_intent[6]:
-            speak("Your aadhar is missing!")
-        
-        elif intent_harsh == unique_intent[7]:
-            speak("biz_new")
-        
-        elif intent_harsh == unique_intent[8]:
-            speak("approval_time")
-        
-        elif intent_harsh == unique_intent[9]:
-            speak(unique_intent[9][3:])
-        
-        elif intent_harsh == unique_intent[10]:
-            speak(unique_intent[10][7:])
-        
-        elif intent_harsh == unique_intent[11]:
-            speak(unique_intent[11][7:])
-        
-        elif intent_harsh == unique_intent[12]:
-            speak(unique_intent[12][7:])
-        
-        elif intent_harsh == unique_intent[13]:
-            speak(unique_intent[13][3:])
-        
-        elif intent_harsh == unique_intent[14]:
-            speak(unique_intent[14][3:])
-        
-        elif intent_harsh == unique_intent[15]:
-            speak(unique_intent[15][3:])
-        
-        elif intent_harsh == unique_intent[16]:
-            speak(unique_intent[16][3:])
-        
-        elif intent_harsh == unique_intent[17]:
-            speak(unique_intent[17][7:])
-        
-        elif intent_harsh == unique_intent[18]:
-            speak(unique_intent[18][7:])
-        
-        elif intent_harsh == unique_intent[19]:
-            speak(unique_intent[19][7:])
-        
-        elif intent_harsh == unique_intent[20]:
-            speak(unique_intent[20][3:])
+            tts.speak("Borrow limit")
         
         else:
-            speak("Jarvis: I cannot understand sir!")
+            tts.speak("Jarvis: I cannot understand sir!")
             break
 
 def main():

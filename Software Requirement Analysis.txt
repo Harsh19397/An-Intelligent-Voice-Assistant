@@ -1,7 +1,13 @@
 Requirements:
     
-    1. Speaker Identification
+    1. Speaker Identification:
+        a. architecture                         Done
+        b. Training
+        c. accuracy                             75%
     2. Intent Detector
+        a. architecture                         
+        b. Training
+        c. accuracy
     3. Functionalities:
         0. Startup message with time and weather.
         a. Google/Internet Search

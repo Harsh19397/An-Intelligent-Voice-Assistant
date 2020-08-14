@@ -1,7 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug 14 00:39:56 2020
+import pyttsx3
 
-@author: Harsh Parashar
-"""
+engine = pyttsx3.init('sapi5') 
+voices = engine.getProperty('voices') 
+engine.setProperty('voice', voices[0].id) 
 
+def speak(audio): 
+    engine.say(audio) 
+    engine.runAndWait()
