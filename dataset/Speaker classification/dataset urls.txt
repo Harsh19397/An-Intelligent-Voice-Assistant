@@ -1,0 +1,4 @@
+Download the dataset from here
+
+1. http://www.openslr.org/resources/12/train-clean-100.tar.gz
+2. http://www.openslr.org/resources/12/test-clean.tar.gz
