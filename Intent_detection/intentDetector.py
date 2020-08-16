@@ -97,6 +97,7 @@ def get_final_output(pred, classes):
   predictions = -np.sort(-predictions)
   return classes[np.argmax(predictions)]
 
+'''
 #Speech Recognition
 def detect_intent():
     while True:
@@ -126,13 +127,15 @@ def detect_intent():
             tts.speak("Jarvis: I cannot understand sir!")
             break
 
+
 def main():
     detect_intent()
                    
 if __name__ == "__main__":
     main()                                                                             
 
-    
+'''
+   
     
     
     

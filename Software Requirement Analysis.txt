@@ -3,11 +3,12 @@ Requirements:
     1. Speaker Identification:
         a. architecture                         Done
         b. Training
-        c. accuracy                             75%
+        c. accuracy                             
     2. Intent Detector
-        a. architecture                         
+        a. architecture                         Done
         b. Training
         c. accuracy
+	d. dataset
     3. Functionalities:
         0. Startup message with time and weather.
         a. Google/Internet Search
@@ -27,9 +28,11 @@ Requirements:
         o. Showing weather
         p. music controls
         q. Jokes
-        r. Sarcasm
+        r. Open a movie on Netflix
         s. Math Calculations
         t. read out loud
         u. news
         v. Brightness control
+	w. Open a movie on Prime
+	x. Open a movie on Hotstar
     4. Implement Gideon type UI

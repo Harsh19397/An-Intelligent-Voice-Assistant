@@ -1,17 +1,12 @@
 #data preprocessing
 #importing libraries
 import pandas as pd
-import numpy as np
-from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem.lancaster import LancasterStemmer
-import nltk
 import re
 from sklearn.preprocessing import OneHotEncoder
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-from keras.utils import to_categorical
-from nltk.stem.lancaster import LancasterStemmer
 from sklearn.model_selection import train_test_split
 
 #Loading the dataset
