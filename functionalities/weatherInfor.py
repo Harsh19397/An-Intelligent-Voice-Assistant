@@ -3,11 +3,16 @@
 # using openweathermap api 
 
 # import required modules 
-import requests, json 
+import requests, json
+
+f = open('key.json')
+key = json.load(f)
+API_KEY = key["key"]
+
 
 def get_weather(city_name):
     # Enter your API key here 
-    api_key = "ca9fee9e7423b70bd73a189531696819"
+    api_key = API_KEY
     
     # base_url variable to store url 
     base_url = "http://api.openweathermap.org/data/2.5/weather?" 

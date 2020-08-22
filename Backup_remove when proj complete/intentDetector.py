@@ -13,7 +13,7 @@ import os
 logging.basicConfig(level=logging.DEBUG)
 
 #Loading the dataset
-intent, unique_intent, sentences = dpu.load_dataset('Dataset.csv')
+intent, unique_intent, sentences = dpu.load_dataset('C:\Machine Learning\Projects\Intelligent Voice Assistant\dataset\Intent Detector\intent_dataset.csv')
 logging.debug(sentences[:5])
 
 #Downloading the stopwords and punctuation marks
@@ -63,7 +63,7 @@ logging.debug("Shape of val_X = %s and val_Y = %s" % (val_X.shape, val_Y.shape))
 filename = 'IntentDetectormodel.h5'
 
 if os.path.isfile('IntentDetectormodel.h5') == False:
-    train_NN.create_model(vocab_size, max_length, train_X, train_Y, val_X, val_Y, filename)
+    train_NN.create_model(vocab_size, max_length, train_X, train_Y, val_X, val_Y, filename, len(unique_intent))
 
 #Loading the model    
 model = load_model('IntentDetectormodel.h5')
@@ -96,6 +96,13 @@ def get_final_output(pred, classes):
   classes = classes[ids]
   predictions = -np.sort(-predictions)
   return classes[np.argmax(predictions)]
+
+#Testing
+def get_intent(text):
+    #text = "Please search about Jarvis on google"
+    pred = predictions(text)
+    print("Intent Detected: "+ get_final_output(pred, unique_intent))
+
 
 '''
 #Speech Recognition

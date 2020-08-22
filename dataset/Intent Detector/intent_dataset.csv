@@ -1,0 +1,242 @@
+﻿help me in calling,intent.contact
+please dial,intent.contact
+request you to call,intent.contact
+request you to dial,intent.contact
+help me in dialing,intent.contact
+call up,intent.contact
+dial up,intent.contact
+please ring ,intent.contact
+ring up,intent.contact
+give a call,intent.contact
+get someone on the phone,intent.contact
+give a ring,intent.contact
+please contact,intent.contact
+Reach him over a call,intent.contact
+give a tinkle,intent.contact
+give someone a ring,intent.contact
+give someone a buzz,intent.contact
+give someone a bell,intent.contact
+conference call,intent.contact
+give someone a tinkle,intent.contact
+mobile,intent.contact
+Reach him over mobile,intent.contact
+call him over landline,intent.contact
+call him over cellphone,intent.contact
+make a cellular call,intent.contact
+make a voice call,intent.contact
+make a phone call,intent.contact
+make a mobile call,intent.contact
+text ,intent.text_message
+please text him,intent.text_message
+please help to message,intent.text_message
+please coutinue to chat ,intent.text_message
+chat with him,intent.text_message
+have a word with him,intent.text_message
+please communicate ,intent.text_message
+send the text to him ,intent.text_message
+send the message,intent.text_message
+dispatch a message,intent.text_message
+shoot a message ,intent.text_message
+please draft a message,intent.text_message
+please draft a text,intent.text_message
+create a mesage ,intent.text_message
+please spread this message,intent.text_message
+convey with him,intent.text_message
+remind him over a text message,intent.text_message
+forward this message to him,intent.text_message
+reply for this message,intent.text_message
+deliver a text message,intent.text_message
+transfer this chat,intent.text_message
+drop a text message,intent.text_message
+send a note,intent.text_message
+write a message,intent.text_message
+have a word,intent.text_message
+make conversation,intent.text_message
+deliver a message,intent.text_message
+circulate a message,intent.text_message
+give a message,intent.text_message
+send a text,intent.text_message
+post a message,intent.text_message
+pass along a message,intent.text_message
+pass on a message,intent.text_message
+send out a message,intent.text_message
+Search about,intent.google_search
+Please Search about,intent.google_search
+Could you please tell me about,intent.google_search
+I want to know ,intent.google_search
+Please Search,intent.google_search
+Search,intent.google_search
+Tell me about,intent.google_search
+Tell me ,intent.google_search
+What is ,intent.google_search
+Please look up,intent.google_search
+Please look ,intent.google_search
+Look for,intent.google_search
+look about,intent.google_search
+Research on,intent.google_search
+Research about,intent.google_search
+Explore on,intent.google_search
+I want to know ,intent.google_search
+Give me some knowledge on,intent.google_search
+Tell me facts about,intent.google_search
+Give me some facts on,intent.google_search
+give me some information,intent.google_search
+provide me some information on,intent.google_search
+Interesting facts on,intent.google_search
+What do you know about,intent.google_search
+What do you think about,intent.google_search
+Google this,intent.google_search
+Google facts on,intent.google_search
+Google search ,intent.google_search
+Googling,intent.google_search
+Can you google something on this,intent.google_search
+I want to make a search query,intent.google_search
+I want to make google query,intent.google_search
+I want to know facts about this,intent.google_search
+Grant me some information on this,intent.google_search
+Is it hot or cold,intent.weather
+Is it sunny,intent.weather
+Is it raining,intent.weather
+What's the weather forecast,intent.weather
+What's the weather expected to be tomorrow,intent.weather
+What's the temperature,intent.weather
+How's the weather,intent.weather
+What’s it like outside,intent.weather
+Is it humid?,intent.weather
+Is it hot       ,intent.weather
+It is cold,intent.weather
+Is it winter,intent.weather
+Is it spring,intent.weather
+What is the temperature,intent.weather
+What is the degree outside,intent.weather
+How hot is it,intent.weather
+How cold is it,intent.weather
+Cloudy weather,intent.weather
+lighning outside,intent.weather
+thunderstorms outside,intent.weather
+hailing ouside,intent.weather
+hail storm,intent.weather
+Snowfall,intent.weather
+snowy weather,intent.weather
+heavy snow ,intent.weather
+dusky weather,intent.weather
+cyclone in,intent.weather
+weather in,intent.weather
+temperature at,intent.weather
+amount of rainfall,intent.weather
+Show me the route for..,intent.route_information
+How can I reach..,intent.route_information
+I want to reach..,intent.route_information
+I want to go to,intent.route_information
+Show me the way to,intent.route_information
+How can I go to ,intent.route_information
+put on the map for ,intent.route_information
+show me map for,intent.route_information
+show me site on map,intent.route_information
+show me the whereabouts of,intent.route_information
+show me the map,intent.route_information
+show me the location on map,intent.route_information
+How do I get to,intent.route_information
+Where’s the nearest,intent.route_information
+Near me,intent.route_information
+Around me,intent.route_information
+Could you tell me the best way to get to ,intent.route_information
+Where exactly am I,intent.route_information
+Where am I,intent.route_information
+Where I am,intent.route_information
+What is the quickest way to get to ,intent.route_information
+What is the shortest way to get to  ,intent.route_information
+What is the longest way to get to ,intent.route_information
+Where is  ,intent.route_information
+Tell me the directions to ,intent.route_information
+How do I get to ,intent.route_information
+Can you tell me the best way of getting to,intent.route_information
+How do I go to,intent.route_information
+How do I reach,intent.route_information
+Could you direct me to ,intent.route_information
+Which way do I go to get to,intent.route_information
+Could you tell me how to get to ,intent.route_information
+Where is the,intent.route_information
+Which is the best way to,intent.route_information
+I would like to go to ,intent.route_information
+Can you show me which way to go using the map,intent.route_information
+Could you please guide me to,intent.route_information
+What direction should I take for,intent.route_information
+Which way leads to,intent.route_information
+Navigate to,intent.route_information
+Could you please navigate me to,intent.route_information
+Please read the notifications,intent.notifications
+display notifications,intent.notifications
+read the notifications,intent.notifications
+show the notifications,intent.notifications
+speak out my notifications,intent.notifications
+tell me about my notifications,intent.notifications
+express my notifications,intent.notifications
+showcase all my notifications,intent.notifications
+see the notifications ,intent.notifications
+check the notifications,intent.notifications
+present the notifications,intent.notifications
+please share the notifications,intent.notifications
+please convey all the notifications ,intent.notifications
+check if there are any notifications,intent.notifications
+exhibit notifications,intent.notifications
+please demonstrate the notifications,intent.notifications
+could you tell me the notifications,intent.notifications
+please read all notifications,intent.notifications
+Please announce the notifications,intent.notifications
+disclose the notification,intent.notifications
+state the notification,intent.notifications
+Please change the wallpaper,intent.wallpaper
+change wallpaper,intent.wallpaper
+replace wallpaper,intent.wallpaper
+new wallpaper,intent.wallpaper
+Change background ,intent.wallpaper
+new background,intent.wallpaper
+replace background,intent.wallpaper
+Set new background,intent.wallpaper
+Set new wallpaper,intent.wallpaper
+Set new main screen background,intent.wallpaper
+Change screen background,intent.wallpaper
+change screen wallpaper,intent.wallpaper
+Change background image,intent.wallpaper
+I want a new background,intent.wallpaper
+I want a new wallpaper,intent.wallpaper
+Can you please set a new background ,intent.wallpaper
+Set wallpaper ,intent.wallpaper
+Create a new wallpaper,intent.wallpaper
+Increase the brighness,intent.brightness_control
+Decrease the brightness,intent.brightness_control
+low brightness,intent.brightness_control
+high brightness,intent.brightness_control
+set brightness level,intent.brightness_control
+control brightness,intent.brightness_control
+Change the levels for brightness,intent.brightness_control
+Dim the brightness,intent.brightness_control
+open calender,intent.calender
+could you please open the calender,intent.calender
+show calender,intent.calender
+show date in calender,intent.calender
+can you please open calender,intent.calender
+please show the calender,intent.calender
+start the calender application,intent.calender
+Launch the calender application,intent.calender
+Show me my upcoming appointements,intent.calender
+Show me the schedule in the calender,intent.calender
+Show me the holidays,intent.calender
+Show the track of my monthly activities,intent.calender
+Show me yearly plan,intent.calender
+SHow me monthly plan,intent.calender
+Show me weekly plan,intent.calender
+Show me daily plan,intent.calender
+Dates marked,intent.calender
+youtube,intent.youtube
+Can you youtube,intent.youtube
+Show me on youtube,intent.youtube
+lookup on youtube,intent.youtube
+Search on youtube,intent.youtube
+Show me search results on youtube,intent.youtube
+youtube on,intent.youtube
+fetch results from youtube,intent.youtube
+get some results from youtube,intent.youtube
+research on youtube,intent.youtube
+tell me all you have from youtube,intent.youtube
