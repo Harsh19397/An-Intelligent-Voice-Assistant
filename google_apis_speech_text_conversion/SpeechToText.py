@@ -13,9 +13,11 @@ def speechToText():
         
         try:
             print("Recognizing...")
-            return r.recognize_google(audio)
+            return r.recognize_google(audio), audio
             
         except Exception as e:
             print("Error: "+str(e))
         return "Error"
+    
+
 

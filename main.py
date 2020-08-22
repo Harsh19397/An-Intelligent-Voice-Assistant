@@ -1,56 +1,83 @@
 #We will call all the main functions here
 #Importing libraries
-import numpy as np
-import pandas as pd
-import speech_recognition as sr
 from google_apis_speech_text_conversion import SpeechToText as stt
 from google_apis_speech_text_conversion import TextToSpeech as tts
-from functionalities import listen_audio as listen
 import intentDetector as intent
 import startup
+from set_your_voice import set_your_audio
+from Activate_assistant import hot_word_activation
 from functionalities import datetime, get_location, weatherInfor, google_search, youtube_search
 
+#Person using the assistant.
+#Later fetch from the Database
+User_name = "Harsh_Parashar"
 #Triggered with a hot word
 #Naming the assistant
+assistant_name = "Gideon"
 
-#Booting up the assistant with the startup messages and key fucnctionalities
-startup.startup_message()
-#Setting the hot word
-#Later on fetch from the database
-hot_word = ""
-hot_word = startup.setting_up_hot_word(hot_word)
+#Fetch from the DB later
+voice_set = False 
+if not voice_set:
+    set_your_audio(User_name, assistant_name)
 
-#Detect Intent and integrated with the funnctionality files
+#Activate Assistant
+activate = hot_word_activation(User_name, assistant_name)
 
-while True:
+if activate:
+    #Booting up the assistant with the startup messages and key fucnctionalities
+    startup.startup_message()
+    #Setting the hot word
+    #Later on fetch from the database
+    #hot_word = ""
+    #hot_word = startup.setting_up_hot_word(hot_word)
     
-    query = stt.speechToText().lower()
-    intent_detected = intent.get_intent(query)
-
-    if 'bye' or 'exit' in query:
-        tts.speak("Byee Sir!")
-        break
-    elif intent_detected == 'intent.google_search':
-        google_search.google_search(query)
-    elif intent_detected == 'intent.youtube':
-        youtube_search.youtube_search(query)
-    elif intent_detected == 'intent.text_message':
-        pass
-    elif intent_detected == 'intent.brightness_control':
-        pass
-    elif intent_detected == 'intent.route_information':
-        pass
-    elif intent_detected == 'intent.calender':
-        pass
-    elif intent_detected == 'intent.contact':
-        pass
-    elif intent_detected == 'intent.notifications':
-        pass
-    elif intent_detected == 'intent.wallpaper':
-        pass
-    elif intent_detected == 'intent.weather':
-        pass
+    #Detect Intent and integrated with the funnctionality files
     
-    else:
-        tts.speak("Couldn't understand you")
+    while True:
         
+        query, audio = stt.speechToText().lower()
+        intent_detected = intent.get_intent(query)
+    
+        if 'bye' or 'exit' in query:
+            tts.speak("{}: Byee Sir!".fromat(assistant_name))
+            print("{}: Byee Sir!".format(assistant_name))
+            break
+        elif intent_detected == 'intent.google_search':
+            print("You: {}".format(query))
+            google_search.google_search(query)
+        elif intent_detected == 'intent.youtube':
+            print("You: {}".format(query))
+            youtube_search.youtube_search(query)
+        elif intent_detected == 'intent.text_message':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.brightness_control':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.route_information':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.calender':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.contact':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.notifications':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.wallpaper':
+            print("You: {}".format(query))
+            pass
+        elif intent_detected == 'intent.weather':
+            print("You: {}".format(query))
+            pass
+        
+        else:
+            print("You: {}".format(query))
+            tts.speak("{}: Couldn't understand you".format(assistant_name))
+            print("{}: Couldn't understand you".format(assistant_name))
+
+else:
+    tts.speak("{}: I dont listen to you! You are not privalleged enough to use my services.".format(assistant_name))
+    print("{}: I dont listen to you! You are not privalleged enough to use my services.".format(assistant_name))        

@@ -103,44 +103,12 @@ def get_intent(text):
     return get_final_output(pred, unique_intent)
 
 
-'''
-#Speech Recognition
-def detect_intent():
-    while True:
-        query = stt.speechToText()
-        pred = predictions(query)
-        intent_harsh = get_final_output(pred, unique_intent)
-    
-        if intent_harsh == unique_intent[0]:
-            tts.speak("You can tell me everything.")
-        
-        elif intent_harsh == unique_intent[1]:
-            tts.speak("I will help you to register this program.")
-        
-        elif intent_harsh == unique_intent[2]:
-            tts.speak("I am a bot.")
-        
-        elif intent_harsh == unique_intent[3]:
-            tts.speak("Querry")
-        
-        elif intent_harsh == unique_intent[4]:
-            tts.speak(unique_intent[4][3:])
-        
-        elif intent_harsh == unique_intent[5]:
-            tts.speak("Borrow limit")
-        
-        else:
-            tts.speak("Jarvis: I cannot understand sir!")
-            break
-
-
 def main():
     detect_intent()
                    
 if __name__ == "__main__":
     main()                                                                             
 
-'''
    
     
     
