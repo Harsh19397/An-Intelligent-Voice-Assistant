@@ -9,10 +9,10 @@ import dill
 import numpy as np
 from tqdm import tqdm
 
-from audio import pad_mfcc, Audio
-from constant import NUM_FRAMES, NUM_FBANKS
-from conv_models import DeepSpeakerModel
-from utils import ensures_dir, load_pickle, load_npy, train_test_sp_to_utt
+from Deep_Speaker.audio import pad_mfcc, Audio
+from Deep_Speaker.constant import NUM_FRAMES, NUM_FBANKS
+from Deep_Speaker.conv_models import DeepSpeakerModel
+from Deep_Speaker.utils import ensures_dir, load_pickle, load_npy, train_test_sp_to_utt
 
 logger = logging.getLogger(__name__)
 

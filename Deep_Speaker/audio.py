@@ -7,9 +7,8 @@ import librosa
 import numpy as np
 from python_speech_features import fbank
 from tqdm import tqdm
-
-from constant import SAMPLE_RATE, NUM_FBANKS
-from utils import find_files, ensures_dir
+from Deep_Speaker.constant import SAMPLE_RATE, NUM_FBANKS
+from Deep_Speaker.utils import find_files, ensures_dir
 
 logger = logging.getLogger(__name__)
 

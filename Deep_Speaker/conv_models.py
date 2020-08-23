@@ -14,8 +14,8 @@ from tensorflow.keras.layers import Reshape
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 
-from constant import NUM_FBANKS, NUM_FRAMES
-from triplet_loss import deep_speaker_loss
+from Deep_Speaker.constant import NUM_FBANKS, NUM_FRAMES
+from Deep_Speaker.triplet_loss import deep_speaker_loss
 
 logger = logging.getLogger(__name__)
 

@@ -1,9 +1,9 @@
 from record_audio import record_audio
 from google_apis_speech_text_conversion import TextToSpeech as tts
-from speaker_identification import get_speaker_identity
+from Deep_Speaker.speaker_identification import get_speaker_identity
 
 def hot_word_activation(User_name, assistant_name):
-    tts.speak("{}: Please say your hot word to activate!".format(assistant_name))
+    tts.speak("Please say your hot word to activate!")
     print("{}: Please say your hot word to activate!".format(assistant_name))
     record_audio("validation_audio")
     

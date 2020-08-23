@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from natsort import natsorted
 
-from constant import TRAIN_TEST_RATIO
+from Deep_Speaker.constant import TRAIN_TEST_RATIO
 
 logger = logging.getLogger(__name__)
 

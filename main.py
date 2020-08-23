@@ -2,11 +2,12 @@
 #Importing libraries
 from google_apis_speech_text_conversion import SpeechToText as stt
 from google_apis_speech_text_conversion import TextToSpeech as tts
-import intentDetector as intent
+from Intent_detection import intentDetector as intent
 import startup
 from set_your_voice import set_your_audio
-from Activate_assistant import hot_word_activation
+from Deep_Speaker.Activate_assistant import hot_word_activation
 from functionalities import datetime, get_location, weatherInfor, google_search, youtube_search
+import os
 
 #Person using the assistant.
 #Later fetch from the Database
@@ -16,30 +17,36 @@ User_name = "Harsh_Parashar"
 assistant_name = "Gideon"
 
 #Fetch from the DB later
-voice_set = False 
-if not voice_set:
+#voice_set = False 
+if not os.path.isfile("Recorded_Harsh_Parashar1.wav"):
     set_your_audio(User_name, assistant_name)
 
+#Setting the hot word
+#Later on fetch from the database
+#hot_word = ""
+#hot_word = startup.setting_up_hot_word(hot_word)
+    
 #Activate Assistant
 activate = hot_word_activation(User_name, assistant_name)
-
+if activate:
+    tts.speak("Hello {}, You have activated me! Tell me how can I help you.".format(User_name))
+    print("{}: Hello {}, You have activated me! Tell me how can I help you.".format(assistant_name, User_name))
+else:
+    tts.speak("Voice not matched! Try again later")
+    print("Voice not matched! Try again later")
+    
 if activate:
     #Booting up the assistant with the startup messages and key fucnctionalities
     startup.startup_message()
-    #Setting the hot word
-    #Later on fetch from the database
-    #hot_word = ""
-    #hot_word = startup.setting_up_hot_word(hot_word)
-    
     #Detect Intent and integrated with the funnctionality files
     
     while True:
         
-        query, audio = stt.speechToText().lower()
+        query = stt.speechToText().lower()
         intent_detected = intent.get_intent(query)
     
         if 'bye' or 'exit' in query:
-            tts.speak("{}: Byee Sir!".fromat(assistant_name))
+            tts.speak("{}: Byee Sir!".format(assistant_name))
             print("{}: Byee Sir!".format(assistant_name))
             break
         elif intent_detected == 'intent.google_search':
@@ -79,5 +86,5 @@ if activate:
             print("{}: Couldn't understand you".format(assistant_name))
 
 else:
-    tts.speak("{}: I dont listen to you! You are not privalleged enough to use my services.".format(assistant_name))
+    tts.speak("I dont listen to you! You are not privalleged enough to use my services.")
     print("{}: I dont listen to you! You are not privalleged enough to use my services.".format(assistant_name))        
