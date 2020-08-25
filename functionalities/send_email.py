@@ -2,11 +2,17 @@ import smtplib
 from nltk.tokenize import word_tokenize
 import enchant
 import re
+from google_apis_speech_text_conversion import SpeechToText as stt
+from google_apis_speech_text_conversion import TextToSpeech as tts
 from email.mime.text import MIMEText
 
 dictionary = enchant.Dict("en_US")
 
-def get_recipients_id(text):
+def get_recipients_id(assistant_name):
+    print("{}: Whom do you want to send email?".format(assistant_name))
+    tts.speak("Whom do you want to send email?")
+    recipients = stt.speechToText()
+    reci
     lst = re.findall('\S+@+\S', text)
     return lst
 
@@ -25,6 +31,8 @@ def send_email(text, sender_email_id, sender_email_id_password):
     msg['Subject'] = get_subject()
     msg['From'] = fromx
     msg['To'] = to
+    
+    
     
     #Creating SMTP session
     smtp_session = smtplib.SMTP(host='smtp.gmail.com', port=587)
