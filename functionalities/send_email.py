@@ -1,7 +1,5 @@
 import smtplib
-from nltk.tokenize import word_tokenize
 import enchant
-import re
 from google_apis_speech_text_conversion import SpeechToText as stt
 from google_apis_speech_text_conversion import TextToSpeech as tts
 from email.mime.text import MIMEText
@@ -9,24 +7,33 @@ from email.mime.text import MIMEText
 dictionary = enchant.Dict("en_US")
 
 def get_recipients_id(assistant_name):
-    print("{}: Whom do you want to send email?".format(assistant_name))
-    tts.speak("Whom do you want to send email?")
+    print("{}: Whom do you want to send email? If there are more than one recipients separate them using 'and'.".format(assistant_name))
+    tts.speak("Whom do you want to send email? If there are more than one recipients separate them using 'and'.")
     recipients = stt.speechToText()
-    reci
-    lst = re.findall('\S+@+\S', text)
+    lst = recipients.split('and')
+    for s in range(len(lst)):
+        lst[s] = lst[s].replace(" ", "")
+
     return lst
 
-def get_message():
-    pass
+def get_message(assistant_name):
+    print("{}: What is the message sir!".format(assistant_name))
+    tts.speak("What is the message.")
+    message = stt.speechToText()
+    
+    return message
 
-def get_subject():
-    pass
+def get_subject(assistant_name):
+    print("{}: What is the subject sir!".format(assistant_name))
+    tts.speak("What is the subject.")
+    subject = stt.speechToText()
+    
+    return subject
 
-def send_email(text, sender_email_id, sender_email_id_password):
-    text="Send an email to Swati Sharma saying How are you didi"
-    word_tokens = word_tokenize(text)
+def send_email(assistant_name, sender_email_id, sender_email_id_password):
+    recipient_list = get_recipients_id(assistant_name)
     fromx = sender_email_id
-    to  = get_recipients_id(text)
+    to  = recipient_list
     msg = MIMEText(get_message())
     msg['Subject'] = get_subject()
     msg['From'] = fromx
@@ -47,4 +54,3 @@ def send_email(text, sender_email_id, sender_email_id_password):
     # terminating the session 
     smtp_session.quit() 
     
-send_email("harshparashar19@gmail.com", "Papasabseachhe1957!", "Hello Swati Didi!","Swati")
