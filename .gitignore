@@ -1,1 +1,2 @@
-Speaker Identification/content/
+*.wav
+dataset/Intent Detector/intent_dataset.csv

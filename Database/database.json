@@ -1,0 +1,26 @@
+{
+    "Harsh Parashar": {
+        "User_name": "Harsh Parashar",
+        "Password": "activate Gideon",
+        "assistant_name": "Gideon",
+        "voice set": true
+    },
+    "Ram Shankar": {
+        "User_name": "Ram Shankar",
+        "Password": "activate Ramesh",
+        "assistant_name": "mummy",
+        "voice set": true
+    },
+    "Suraj Sharma": {
+        "User_name": "Suraj Sharma",
+        "Password": "activate Friday",
+        "assistant_name": "Friday",
+        "voice set": true
+    },
+    "Swati Sharma": {
+        "User_name": "Swati Sharma",
+        "Password": "activate Jarvis",
+        "assistant_name": "Jarvis",
+        "voice set": true
+    }
+}

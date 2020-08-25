@@ -8,7 +8,7 @@ import requests, json
 f = open('key.json')
 key = json.load(f)
 API_KEY = key["key"]
-
+f.close()
 
 def get_weather(city_name):
     # Enter your API key here 
