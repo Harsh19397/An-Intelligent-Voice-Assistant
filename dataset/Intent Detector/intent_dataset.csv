@@ -26,40 +26,6 @@ make a cellular call,intent.contact
 make a voice call,intent.contact
 make a phone call,intent.contact
 make a mobile call,intent.contact
-text ,intent.text_message
-please text him,intent.text_message
-please help to message,intent.text_message
-please coutinue to chat ,intent.text_message
-chat with him,intent.text_message
-have a word with him,intent.text_message
-please communicate ,intent.text_message
-send the text to him ,intent.text_message
-send the message,intent.text_message
-dispatch a message,intent.text_message
-shoot a message ,intent.text_message
-please draft a message,intent.text_message
-please draft a text,intent.text_message
-create a mesage ,intent.text_message
-please spread this message,intent.text_message
-convey with him,intent.text_message
-remind him over a text message,intent.text_message
-forward this message to him,intent.text_message
-reply for this message,intent.text_message
-deliver a text message,intent.text_message
-transfer this chat,intent.text_message
-drop a text message,intent.text_message
-send a note,intent.text_message
-write a message,intent.text_message
-have a word,intent.text_message
-make conversation,intent.text_message
-deliver a message,intent.text_message
-circulate a message,intent.text_message
-give a message,intent.text_message
-send a text,intent.text_message
-post a message,intent.text_message
-pass along a message,intent.text_message
-pass on a message,intent.text_message
-send out a message,intent.text_message
 Search about,intent.google_search
 Please Search about,intent.google_search
 Could you please tell me about,intent.google_search

@@ -16,11 +16,5 @@
         "Password": "activate Friday",
         "assistant_name": "Friday",
         "voice set": true
-    },
-    "Swati Sharma": {
-        "User_name": "Swati Sharma",
-        "Password": "activate Jarvis",
-        "assistant_name": "Jarvis",
-        "voice set": true
     }
 }
