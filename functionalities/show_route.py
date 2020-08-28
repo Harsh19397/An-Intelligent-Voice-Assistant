@@ -7,7 +7,6 @@ from functionalities import get_location
 def show_route(assistant_name, query):
     assistant_name = "Gideon"
     url = 'https://www.google.com/maps/dir/'
-    query = "show me the direction for Unitect Cyber Park from AIACTR"
     query = query.lower()
     clean = re.sub(r'[^ a-z A-Z 0-9]', " ", query)
     clean = clean.split()
