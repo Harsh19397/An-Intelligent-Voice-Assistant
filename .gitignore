@@ -1,5 +1,5 @@
 *.wav
 dataset/Intent Detector/intent_dataset.csv
-key.json
+*.json
 *.png
 *.jpg
