@@ -8,7 +8,7 @@ from Trigger_word_detection.detect_trigger import trigger_word_detection as trig
 from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from Trigger_word_detection import detect_trigger
-from functionalities import google_search, youtube_search, brightness
+from functionalities import google_search, youtube_search, brightness, datetime
 import os, json
 import webbrowser
 
@@ -113,10 +113,21 @@ if pass_user:
 
             #Brightness control
             elif intent_detected == 'intent.brightness':
-                assistant_name = "Gideon"
                 print("You: {}".format(query))
                 brightness.brightness_control(assistant_name, query)
 
+            #Datetime
+            elif intent_detected == 'intent.datetime':
+                print("You: {}".format(query))
+                time, month = datetime.get_date_time()
+                time = str(time).split('.')
+                time = time[0].split()
+                hour = time[1].split(':')[0]
+                minutes = time[1].split(':')[1]
+                day = time[0].split('-')[2]
+                year = time[0].split('-')[0]
+                print("{}: Its {} hours and {} minutes of {} {} {}".format(assistant_name, hour, minutes, day, month, year))
+                tts.speak("Its {} hours and {} minutes of {} {} {}".format(hour, minutes, day, month, year))
 
             else:
                 print("You: {}".format(query))
