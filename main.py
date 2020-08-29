@@ -8,8 +8,8 @@ from Trigger_word_detection.detect_trigger import trigger_word_detection as trig
 from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from Trigger_word_detection import detect_trigger
-from functionalities import google_search, youtube_search, brightness, datetime
-from functionalities import get_location, jokes, launching_applications
+from functionalities import google_search, youtube_search, brightness, datetime, news_module
+from functionalities import get_location, jokes, launching_applications,movies_on_streaming_platforms
 import os, json
 import webbrowser
 
@@ -152,6 +152,15 @@ if pass_user:
                 print("You: {}".format(query))
                 launching_applications.launch_application(assistant_name, query)
 
+            #Stream_movies
+            elif intent_detected == 'intent.streamMovie':
+                print("You: {}".format(query))
+                movies_on_streaming_platforms.stream_movie(assistant_name, query)
+
+            #News
+            elif intent_detected == 'intent.news':
+                print("You: {}".format(query))
+                news_module.get_news(assistant_name, query)
 
             else:
                 print("You: {}".format(query))
