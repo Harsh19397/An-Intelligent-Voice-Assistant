@@ -9,7 +9,7 @@ from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from Trigger_word_detection import detect_trigger
 from functionalities import google_search, youtube_search, brightness, datetime
-from functionalities import get_location, jokes
+from functionalities import get_location, jokes, launching_applications
 import os, json
 import webbrowser
 
@@ -146,6 +146,12 @@ if pass_user:
             elif intent_detected == 'intent.joke':
                 print("You: {}".format(query))
                 jokes.get_jokes(assistant_name)
+
+            #Launch Application
+            elif intent_detected == 'intent.launchApplication':
+                print("You: {}".format(query))
+                launching_applications.launch_application(assistant_name, query)
+
 
             else:
                 print("You: {}".format(query))
