@@ -34,6 +34,7 @@ def brightness_control(assistant_name, query):
         wmi.WMI(namespace='wmi').WmiMonitorBrightnessMethods()[0].WmiSetBrightness(100, 0)
 
     else:
-        pass
+        query += intent_user
+        brightness_control(assistant_name, query)
 
 

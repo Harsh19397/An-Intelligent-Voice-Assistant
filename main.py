@@ -9,7 +9,8 @@ from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from functionalities import google_search, youtube_search, brightness, datetime, news_module
 from functionalities import get_location, jokes, launching_applications,movies_on_streaming_platforms
-from functionalities import play_music, record_session, send_email, set_background
+from functionalities import play_music, record_session, send_email, set_background, show_route
+from functionalities import volume_control
 import json
 import webbrowser
 
@@ -185,6 +186,18 @@ if pass_user:
             elif intent_detected == 'intent.backgroundChange':
                 print("You: {}".format(query))
                 set_background.set_Background_Image(assistant_name)
+
+            #Get route information
+            elif intent_detected == 'intent.routeInfo':
+                print("You: {}".format(query))
+                query = "Show me route from pusa to MGF mall Gurgaon"
+                show_route.show_route(assistant_name, query)
+
+            #Volume control
+            elif intent_detected == 'intent.volume':
+                print("You: {}".format(query))
+                volume_control.volume_control(assistant_name, query)
+
 
             else:
                 print("You: {}".format(query))
