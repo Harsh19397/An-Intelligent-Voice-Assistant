@@ -10,7 +10,7 @@ from Deep_Speaker.Activate_assistant import hot_word_activation
 from functionalities import google_search, youtube_search, brightness, datetime, news_module
 from functionalities import get_location, jokes, launching_applications,movies_on_streaming_platforms
 from functionalities import play_music, record_session, send_email, set_background, show_route
-from functionalities import volume_control
+from functionalities import volume_control, weatherInfor
 import json
 import webbrowser
 
@@ -198,6 +198,12 @@ if pass_user:
                 print("You: {}".format(query))
                 volume_control.volume_control(assistant_name, query)
 
+            #WeatherInformation
+            elif intent_detected == 'intent.weather':
+                print("You: {}".format(query))
+                current_temperature, current_pressure, current_humidity, weather_description = weatherInfor.get_weather(get_location.get_current_location())
+                print("{}: Its {} degree celcius, {} percent humidity and {} here in {}".format(assistant_name, current_temperature, current_humidity, get_location.get_current_location()))
+                tts.speak("Its {} degree celcius, {} percent humidity and {} here in {}".format(current_temperature, current_humidity, get_location.get_current_location()))
 
             else:
                 print("You: {}".format(query))
