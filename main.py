@@ -7,11 +7,10 @@ import startup
 from Trigger_word_detection.detect_trigger import trigger_word_detection as trigger
 from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
-from Trigger_word_detection import detect_trigger
 from functionalities import google_search, youtube_search, brightness, datetime, news_module
 from functionalities import get_location, jokes, launching_applications,movies_on_streaming_platforms
-from functionalities import play_music
-import os, json
+from functionalities import play_music, record_session, send_email
+import json
 import webbrowser
 
 #Loading startup functions during boot time
@@ -166,7 +165,21 @@ if pass_user:
             #Play music
             elif intent_detected == 'intent.playMusic':
                 print("You: {}".format(query))
-                news_module.get_news(assistant_name, query)
+                play_music.play_music(assistant_name, query)
+
+            #Record a session
+            elif intent_detected == 'intent.recordSession':
+                print("You: {}".format(query))
+                record_session.record_session(assistant_name)
+
+            #Send an email
+            elif intent_detected == 'intent.email':
+                print("You: {}".format(query))
+                #Fetch the sender_email_id and encrypted sender_email_id_password from the db
+                #Or replace your credentials below to use this service
+                sender_email_id = "abc@xyz.com"
+                sender_email_id_password = "pass@123"
+                send_email.send_email(assistant_name, sender_email_id, sender_email_id_password)
 
             else:
                 print("You: {}".format(query))
