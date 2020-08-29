@@ -9,7 +9,7 @@ from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from Trigger_word_detection import detect_trigger
 from functionalities import google_search, youtube_search, brightness, datetime
-from functionalities import get_location
+from functionalities import get_location, jokes
 import os, json
 import webbrowser
 
@@ -141,6 +141,11 @@ if pass_user:
                 location = get_location.get_current_location()
                 print("{}: You are at {}.".format(assistant_name, location))
                 tts.speak("You are at {}.".format(location))
+
+            #Jokes
+            elif intent_detected == 'intent.joke':
+                print("You: {}".format(query))
+                jokes.get_jokes(assistant_name)
 
             else:
                 print("You: {}".format(query))
