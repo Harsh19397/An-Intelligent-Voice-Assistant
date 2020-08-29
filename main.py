@@ -9,6 +9,7 @@ from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from Trigger_word_detection import detect_trigger
 from functionalities import google_search, youtube_search, brightness, datetime
+from functionalities import get_location
 import os, json
 import webbrowser
 
@@ -128,6 +129,18 @@ if pass_user:
                 year = time[0].split('-')[0]
                 print("{}: Its {} hours and {} minutes of {} {} {}".format(assistant_name, hour, minutes, day, month, year))
                 tts.speak("Its {} hours and {} minutes of {} {} {}".format(hour, minutes, day, month, year))
+
+            #Brightness control
+            elif intent_detected == 'intent.brightness':
+                print("You: {}".format(query))
+                brightness.brightness_control(assistant_name, query)
+
+            #Get_location
+            elif intent_detected == 'intent.location':
+                print("You: {}".format(query))
+                location = get_location.get_current_location()
+                print("{}: You are at {}.".format(assistant_name, location))
+                tts.speak("You are at {}.".format(location))
 
             else:
                 print("You: {}".format(query))
