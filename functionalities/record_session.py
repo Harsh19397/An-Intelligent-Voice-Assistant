@@ -6,7 +6,7 @@ from google_apis_speech_text_conversion import TextToSpeech as tts
 def record_session(assistant_name):
     #Install bandicam
     os.startfile(r'C:\Program Files (x86)\Bandicam\bdcam_nonadmin.exe')
-    time.sleep(10)
+    time.sleep(12)
     full_screen_selection = pyautogui.locateOnScreen('./functionalities/images/full_screen_selection.png')
     full_screen_selection_location = pyautogui.center(full_screen_selection)
     pyautogui.click(full_screen_selection_location)
