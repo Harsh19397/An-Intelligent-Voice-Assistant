@@ -9,7 +9,7 @@ from set_your_voice import set_your_audio
 from Deep_Speaker.Activate_assistant import hot_word_activation
 from functionalities import google_search, youtube_search, brightness, datetime, news_module
 from functionalities import get_location, jokes, launching_applications,movies_on_streaming_platforms
-from functionalities import play_music, record_session, send_email
+from functionalities import play_music, record_session, send_email, set_background
 import json
 import webbrowser
 
@@ -180,6 +180,11 @@ if pass_user:
                 sender_email_id = "abc@xyz.com"
                 sender_email_id_password = "pass@123"
                 send_email.send_email(assistant_name, sender_email_id, sender_email_id_password)
+
+            #Change your background image
+            elif intent_detected == 'intent.backgroundChange':
+                print("You: {}".format(query))
+                set_background.set_Background_Image(assistant_name)
 
             else:
                 print("You: {}".format(query))

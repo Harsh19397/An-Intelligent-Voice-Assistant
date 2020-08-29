@@ -16,7 +16,7 @@ def set_Background_Image(assistant_name):
     text = stt.speechToText()
     url ="https://unsplash.com/s/photos/"
     text = text.lower()
-    
+
     #Cleaning the text
     clean = re.sub(r'[^ a-z A-Z 0-9]', " ", text)
     clean = re.sub(r'search', "", clean)
@@ -28,25 +28,21 @@ def set_Background_Image(assistant_name):
     clean = re.sub(r'background', "", clean)
     clean = re.sub(r'change', "", clean)
     word_tokens = word_tokenize(clean)
-    
+
     #Removing the stopwords
     stop_words = set(stopwords.words('english'))
     filtered_sentence = [w for w in word_tokens if not w in stop_words]
-    
+
     #Getting the URL ready
     uri = ""
     for x in filtered_sentence:
         uri = uri + x + " "
     for x in uri.split():
-        url += x + '-'  
+        url += x + '-'
     url = url[:-1]
-    
-    #Openning up youtube in the chrome browser 
-    webbrowser.register('chrome',
-                        None,
-                        webbrowser.BackgroundBrowser("C:/Program Files (x86)/Google/Chrome/Application/chrome"))
+
     webbrowser.get('chrome').open(url)
-    
+
     #Saving the first image
     time.sleep(3)
     #Setting the orientation
