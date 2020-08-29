@@ -10,6 +10,7 @@ from Deep_Speaker.Activate_assistant import hot_word_activation
 from Trigger_word_detection import detect_trigger
 from functionalities import google_search, youtube_search, brightness, datetime, news_module
 from functionalities import get_location, jokes, launching_applications,movies_on_streaming_platforms
+from functionalities import play_music
 import os, json
 import webbrowser
 
@@ -159,6 +160,11 @@ if pass_user:
 
             #News
             elif intent_detected == 'intent.news':
+                print("You: {}".format(query))
+                news_module.get_news(assistant_name, query)
+
+            #Play music
+            elif intent_detected == 'intent.playMusic':
                 print("You: {}".format(query))
                 news_module.get_news(assistant_name, query)
 
