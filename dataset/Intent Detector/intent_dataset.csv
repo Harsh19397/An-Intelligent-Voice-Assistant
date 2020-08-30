@@ -331,4 +331,35 @@ do you have a joke in your system,intent.jokes
 are you humourous,intent.jokes
 I'd like to hear a funny joke,intent.jokes
 I'd like to hear a joke,intent.jokes
-,intent.launchApplication
+launch this application,intent.launchApplication
+open it,intent.launchApplication
+please open ,intent.launchApplication
+please launch,intent.launchApplication
+"I want to work on it, please launch it",intent.launchApplication
+"I want to work on it, please open it",intent.launchApplication
+get this application for me,intent.launchApplication
+I would like to work on this application,intent.launchApplication
+I want to use this application,intent.launchApplication
+I want to use it,intent.launchApplication
+get this application working,intent.launchApplication
+I'd like to work on this application,intent.launchApplication
+get app for me,intent.launchApplication
+get it for me,intent.launchApplication
+launch it for me,intent.launchApplication
+launch app for me,intent.launchApplication
+lets work on app,intent.launchApplication
+lets work on it,intent.launchApplication
+let get it working,intent.launchApplication
+make this app work,intent.launchApplication
+Could you open this app for me,intent.launchApplication
+Would you please launch this application,intent.launchApplication
+Can you open application with me,intent.launchApplication
+Could you get this application for me,intent.launchApplication
+"hey, open it for me",intent.launchApplication
+"hey, get it for me",intent.launchApplication
+I'd like to watch this movie on Netflix,intent.streamMovies
+I would  like to watch this movie on Netflix,intent.streamMovies
+Play on Netflix,intent.streamMovies
+Please play on Netflix,intent.streamMovies
+I want to watch on Netflix,intent.streamMovies
+Netfix this movie,intent.streamMovies
