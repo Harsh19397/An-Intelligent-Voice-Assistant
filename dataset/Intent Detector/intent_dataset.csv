@@ -1,32 +1,4 @@
-﻿help me in calling,intent.contact
-please dial,intent.contact
-request you to call,intent.contact
-request you to dial,intent.contact
-help me in dialing,intent.contact
-call up,intent.contact
-dial up,intent.contact
-please ring ,intent.contact
-ring up,intent.contact
-give a call,intent.contact
-get someone on the phone,intent.contact
-give a ring,intent.contact
-please contact,intent.contact
-Reach him over a call,intent.contact
-give a tinkle,intent.contact
-give someone a ring,intent.contact
-give someone a buzz,intent.contact
-give someone a bell,intent.contact
-conference call,intent.contact
-give someone a tinkle,intent.contact
-mobile,intent.contact
-Reach him over mobile,intent.contact
-call him over landline,intent.contact
-call him over cellphone,intent.contact
-make a cellular call,intent.contact
-make a voice call,intent.contact
-make a phone call,intent.contact
-make a mobile call,intent.contact
-Search about,intent.google_search
+﻿Search about,intent.google_search
 Please Search about,intent.google_search
 Could you please tell me about,intent.google_search
 I want to know ,intent.google_search
@@ -131,27 +103,81 @@ What direction should I take for,intent.route_information
 Which way leads to,intent.route_information
 Navigate to,intent.route_information
 Could you please navigate me to,intent.route_information
-Please read the notifications,intent.notifications
-display notifications,intent.notifications
-read the notifications,intent.notifications
-show the notifications,intent.notifications
-speak out my notifications,intent.notifications
-tell me about my notifications,intent.notifications
-express my notifications,intent.notifications
-showcase all my notifications,intent.notifications
-see the notifications ,intent.notifications
-check the notifications,intent.notifications
-present the notifications,intent.notifications
-please share the notifications,intent.notifications
-please convey all the notifications ,intent.notifications
-check if there are any notifications,intent.notifications
-exhibit notifications,intent.notifications
-please demonstrate the notifications,intent.notifications
-could you tell me the notifications,intent.notifications
-please read all notifications,intent.notifications
-Please announce the notifications,intent.notifications
-disclose the notification,intent.notifications
-state the notification,intent.notifications
+Manage brightness,intent.brightness
+Could you please change the brightness,intent.brightness
+Dim the brightness,intent.brightness
+Increase the brightness,intent.brightness
+Control the brightness,intent.brightness
+decrease the brightness,intent.brightness
+maximize the brightness,intent.brightness
+cut down the brightness,intent.brightness
+its too bright. Decrease it,intent.brightness
+Make it less bright,intent.brightness
+make it brighter,intent.brightness
+make it a little darker,intent.brightness
+make it a little more bright,intent.brightness
+Please increase the brightness,intent.brightness
+Could you please make it a little brighter,intent.brightness
+I want it a bit brighter,intent.brightness
+I want it a bit darker,intent.brightness
+Maximize the brightness,intent.brightness
+Max out the brightness,intent.brightness
+I want to control the brightness,intent.brightness
+Can you please increase the brightness for me,intent.brightness
+Increase the brighness,intent.brightness
+Decrease the brightness,intent.brightness
+low brightness,intent.brightness
+high brightness,intent.brightness
+set brightness level,intent.brightness
+control brightness,intent.brightness
+Change the levels for brightness,intent.brightness
+Dim the brightness,intent.brightness
+Change the brightness levels,intent.brightness
+please make it less bright,intent.brightness
+reduce the brightness,intent.brightness
+increase the brightness level to maximum,intent.brightness
+put the brightness level to highest,intent.brightness
+youtube,intent.youtube
+Can you youtube,intent.youtube
+Show me on youtube,intent.youtube
+lookup on youtube,intent.youtube
+Search on youtube,intent.youtube
+Show me search results on youtube,intent.youtube
+youtube on,intent.youtube
+fetch results from youtube,intent.youtube
+get some results from youtube,intent.youtube
+research on youtube,intent.youtube
+tell me all you have from youtube,intent.youtube
+Could you get these results from youtube,intent.youtube
+Please show me what you have on youtube for this,intent.youtube
+Lets search on youtube about ,intent.youtube
+Lets see what youtube has on this,intent.youtube
+Please get me informatve videos from youtube on this,intent.youtube
+"Hey, I want to know what youtuibe has on this",intent.youtube
+Please youtube this for me,intent.youtube
+I want to see videos related to this on youtube,intent.youtube
+Please show me the results from youtube on ,intent.youtube
+I order you to tell me whatever you got from youtube about ,intent.youtube
+Show me a video on,intent.youtube
+show me the releveant videos on youtube,intent.youtube
+Search it up on youtube,intent.youtube
+get from youtube,intent.youtube
+fetch this from youtube,intent.youtube
+Please get this from youtube,intent.youtube
+Please fetch this from youtube,intent.youtube
+Does youtube know anything about ,intent.youtube
+What does youtube know about ,intent.youtube
+Lets look it up on youtube,intent.youtube
+just let me know everything you have on this from youtube,intent.youtube
+Lets get this from youtube,intent.youtube
+Come on show me what you got on this from youtube,intent.youtube
+I want to see a video showing me information on,intent.youtube
+Please enlighten me about this from youtube,intent.youtube
+Show me results after fetching information from youtube,intent.youtube
+Play on youtube,intent.youtube
+listen on youtube,intent.youtube
+I want to see this on youtube,intent.youtube
+all about this from youtube,intent.youtube
 Please change the wallpaper,intent.wallpaper
 change wallpaper,intent.wallpaper
 replace wallpaper,intent.wallpaper
@@ -170,39 +196,139 @@ I want a new wallpaper,intent.wallpaper
 Can you please set a new background ,intent.wallpaper
 Set wallpaper ,intent.wallpaper
 Create a new wallpaper,intent.wallpaper
-Increase the brighness,intent.brightness_control
-Decrease the brightness,intent.brightness_control
-low brightness,intent.brightness_control
-high brightness,intent.brightness_control
-set brightness level,intent.brightness_control
-control brightness,intent.brightness_control
-Change the levels for brightness,intent.brightness_control
-Dim the brightness,intent.brightness_control
-open calender,intent.calender
-could you please open the calender,intent.calender
-show calender,intent.calender
-show date in calender,intent.calender
-can you please open calender,intent.calender
-please show the calender,intent.calender
-start the calender application,intent.calender
-Launch the calender application,intent.calender
-Show me my upcoming appointements,intent.calender
-Show me the schedule in the calender,intent.calender
-Show me the holidays,intent.calender
-Show the track of my monthly activities,intent.calender
-Show me yearly plan,intent.calender
-SHow me monthly plan,intent.calender
-Show me weekly plan,intent.calender
-Show me daily plan,intent.calender
-Dates marked,intent.calender
-youtube,intent.youtube
-Can you youtube,intent.youtube
-Show me on youtube,intent.youtube
-lookup on youtube,intent.youtube
-Search on youtube,intent.youtube
-Show me search results on youtube,intent.youtube
-youtube on,intent.youtube
-fetch results from youtube,intent.youtube
-get some results from youtube,intent.youtube
-research on youtube,intent.youtube
-tell me all you have from youtube,intent.youtube
+lets have a new sceen background image,intent.wallpaper
+set the wallpaper to the best possible image of,intent.wallpaper
+I want a new wallpaper that has on it,intent.wallpaper
+Get me a new wallpaper related to,intent.wallpaper
+A new wallpaper on this would look nice on my screen,intent.wallpaper
+A new wallpaper on this would look good on my screen,intent.wallpaper
+A new wallpaper on this would look great on my screen,intent.wallpaper
+Could you please set a bew wallpaper on this for me.,intent.wallpaper
+A new wallpaper on this would look on my screen,intent.wallpaper
+Change the current wallpaper to a new background of,intent.wallpaper
+A new background of this for my desktop will be nice,intent.wallpaper
+Set a background of desktop to ,intent.wallpaper
+Change the background image to,intent.wallpaper
+Can you change the current background image to ,intent.wallpaper
+Can you please change the cuurent background to,intent.wallpaper
+Could you please set a new desktop background for me,intent.wallpaper
+Refresh my wallpaper with a new background of ,intent.wallpaper
+Lets get a new background for desktop,intent.wallpaper
+I would like to have a new background image of ,intent.wallpaper
+set the wallpaper to ,intent.wallpaper
+Replace the current wallpaper with ,intent.wallpaper
+Set the desktop background as ,intent.wallpaper
+Please set the desktop background image as,intent.wallpaper
+What is the date ,intent.datetime
+Whats the date,intent.datetime
+What is the time,intent.datetime
+Whats the time,intent.datetime
+Get me the current time,intent.datetime
+What time is it ,intent.datetime
+What date is it,intent.datetime
+What time it is,intent.datetime
+What date it is,intent.datetime
+I would like to know the time,intent.datetime
+I would like to know the date,intent.datetime
+Please tell me the date,intent.datetime
+Please tell me the time,intent.datetime
+Tell me the date and time,intent.datetime
+What date and time is it,intent.datetime
+What is the date today,intent.datetime
+What is the time right now,intent.datetime
+What is the time now,intent.datetime
+Whats the time now,intent.datetime
+Whats the time right now,intent.datetime
+Show me the current time,intent.datetime
+Show me today's date,intent.datetime
+Look for today's date,intent.datetime
+Which month is it,intent.datetime
+which month it is,intent.datetime
+which year is it,intent.datetime
+which year it is,intent.datetime
+get me the date time information for me,intent.datetime
+What does the clock say,intent.datetime
+What time does the clock show ,intent.datetime
+what is the time in your clock,intent.datetime
+what does your watch tell,intent.datetime
+what does your clock tell,intent.datetime
+show me time from the clock,intent.datetime
+Show me the time from the watch,intent.datetime
+What is the date today and the current time,intent.datetime
+date and time,intent.datetime
+Fetch date and time for me,intent.datetime
+Get me the time that clock shows right now,intent.datetime
+where am I?,intent.location
+What is this place,intent.location
+Get the location for this place,intent.location
+Get a name for this place,intent.location
+Name this place,intent.location
+Tell me where am I,intent.location
+Please tell me where am I,intent.location
+where I am,intent.location
+please tell me where I am,intent.location
+Do you know the name for this place,intent.location
+Do you know the name of this place,intent.location
+What is this place called,intent.location
+What is this place named,intent.location
+Tell me where are we,intent.location
+Please tell me where we are,intent.location
+I want to know where I am,intent.location
+I want to know where am I,intent.location
+Find me,intent.location
+Find the name of the place where I am currently,intent.location
+Get the location of this place,intent.location
+I am at?,intent.location
+what is this place,intent.location
+where is this place,intent.location
+where are we located ,intent.location
+I want a name for this place,intent.location
+and this place is,intent.location
+location of this places says what name,intent.location
+what is this place coined as,intent.location
+Get my coordinates and tell me where I am,intent.location
+Get my coordinates and tell me where am I,intent.location
+You gotta tell me where am I,intent.location
+Show me where am I,intent.location
+tell me a joke,intent.jokes
+please tell me a joke,intent.jokes
+get a joke for me,intent.jokes
+are you funny? ,intent.jokes
+tell me a funny joke,intent.jokes
+Do you know any funny joke,intent.jokes
+make me laugh,intent.jokes
+can you make me laugh,intent.jokes
+do you know anything funny,intent.jokes
+any idea about humour,intent.jokes
+humorous jokes,intent.jokes
+I want to listen to a joke,intent.jokes
+I want to hear a joke,intent.jokes
+I want to hear something real funny,intent.jokes
+I want to laught out loud,intent.jokes
+Can you make me laugh,intent.jokes
+Can you make me smile,intent.jokes
+Can you put a smile on my face,intent.jokes
+Can you get me laughing,intent.jokes
+make me roll out on floor laughing,intent.jokes
+a funny joke please,intent.jokes
+a joke please,intent.jokes
+try out telling me a joke,intent.jokes
+do you now how to make me laugh,intent.jokes
+do you know how to make me smile,intent.jokes
+tell me a joke from your bag of jokes,intent.jokes
+what do you think a funny joke sounds like,intent.jokes
+what is a joke,intent.jokes
+I want to hear a funny one,intent.jokes
+tell me something super funny,intent.jokes
+Pour some jokes on me,intent.jokes
+Rain jokes on me,intent.jokes
+Show me how funny are you,intent.jokes
+Show me how funny you are,intent.jokes
+Get your funny sense and tell me a joke,intent.jokes
+recite me a joke,intent.jokes
+recite me a funny joke,intent.jokes
+do you have a joke in your system,intent.jokes
+are you humourous,intent.jokes
+I'd like to hear a funny joke,intent.jokes
+I'd like to hear a joke,intent.jokes
+,intent.launchApplication
