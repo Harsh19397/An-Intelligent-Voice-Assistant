@@ -3,5 +3,5 @@ An Intelligent voice assistant is an application that can understand voice comma
   1.  Deep Speaker - Responsible for recognising the speakers voice.
   2.  Intent Detection - Responsible for detecting the intent of the user.
   3.  Trigger word detection - Responsible for detecting the trigger when the user speaks the hot word.
-  4.  Speech to Text : Responsible for recognising the voice commands of the user.
-  5.  Text to Speech: Responsible for converting the text to speech to interact with the user.
+  4.  Speech to Text - Responsible for recognising the voice commands of the user.
+  5.  Text to Speech - Responsible for converting the text to speech to interact with the user.
