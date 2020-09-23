@@ -21,3 +21,9 @@ Speech to text module is responsible for translating the human speech to text fo
 ## Text to Speech
 Text to Speech module is responsible for translating text to speech. Here in this project the free text to speech API provided by Google is being used as it has very high accuracy and this functionality requires very high accuracy, as if this doesn’t happen the entire user experience gets bad. 
 
+## How to use this project
+User guide of this intelligent voice assistant prototype can be divided into 4 sections which are namely:
+1.	Cloning this GitHub repository
+2.	Installing the dependencies
+3.	Training the model / Use the existing trained model stored in .h5 format
+4.	Running the main.h5 file to have all the fun
