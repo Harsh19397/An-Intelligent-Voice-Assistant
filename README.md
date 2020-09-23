@@ -27,3 +27,19 @@ User guide of this intelligent voice assistant prototype can be divided into 4 s
 2.	Installing the dependencies
 3.	Training the model / Use the existing trained model stored in .h5 format
 4.	Running the main.h5 file to have all the fun
+
+In order to use the below steps make sure that python 3.7 has been installed on your system and python has been added to the environment variable.
+
+### Cloning this GitHub Repository
+Clone this github repository by running "git clone https://github.com/Harsh19397/An-Intelligent-Voice-Assistant.git"
+
+### Installing the dependancies
+To be updated.
+
+### Training the model (optional)
+1. Training the Deep Speaker model by running the command "python Deep_Speaker/conv_models.py"
+2. Training the Intent Detection model  by running the command "python Intent_detection/intentDetection.py"
+
+### Use the assistant to have fun
+Run the command "python main.py"
+
