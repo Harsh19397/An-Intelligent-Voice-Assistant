@@ -12,3 +12,12 @@ Deep speaker module is responsible for recognising the speakers voice. I have le
 ## Intent Detection
 Intent detection module deals with the intent of the user. A user can make a request for a task in several ways in English language. Hence it won’t be a wise decision to decide to hardcode the vocab used by a user to get some task completed. In order to deal with this problem, a neural network has been trained on a dataset of some user commands. This neural network will predict the intent of the user no matter what way the user uses to command the assistant for a specific task. For future scope and to make the intent detection even more successful a check can be made whenever a user says a new command which is not stored in the database but the neural network predicts the intent mapped across it, that command can be automatically added to the database. Further the neural network can be trained on a regular interval to achieve a higher accuracy for intent detection.
 
+## Trigger Word detection
+Trigger word detection module is responsible for activating the assistant only when the user speaks the activation word that has been assigned for that specific user. Coupling this trigger word detection module with the deep speaker module gives us the power to activate the assistant only when the logged in user speaks that activation word and not by anyone else. This functionality makes the assistant more secure and cannot be used by any unauthorized user to access the data of the authorized user. Google speech to text api is used, which translates the user’s voice commands into the text which is then compared with the activation word stored in the database for the active user. Once those two matches, assistant activates and is ready to take commands by the user to perform all the tasks assigned.
+
+## Speech to Text
+Speech to text module is responsible for translating the human speech to text form. Here in this project the free speech to text API provided by Google is being used as it has very high accuracy and this functionality requires very high accuracy as if this doesn’t happen the entire user experience becomes bad. 
+
+## Text to Speech
+Text to Speech module is responsible for translating text to speech. Here in this project the free text to speech API provided by Google is being used as it has very high accuracy and this functionality requires very high accuracy, as if this doesn’t happen the entire user experience gets bad. 
+
